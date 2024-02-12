@@ -15,7 +15,13 @@ for i in range(len(document.paragraphs)):
 			
 			if document.paragraphs[i].runs[j].text == 'Таблица 1.1 – Функции меломана ':
 				print(document.paragraphs[i].runs[j].text)
-				print(document.tables[0].rows[0].cells[0].text)
 
 	# print('\n\n')
 
+table_text = ''
+for k in range(len(document.tables[0].rows)):
+	for l in range(len(document.tables[0].rows[k].cells)):
+		table_text += f'{document.tables[0].rows[k].cells[l].text:^60}'
+	table_text += '\n'
+
+print(table_text)
