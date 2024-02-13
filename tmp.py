@@ -25,3 +25,12 @@ for k in range(len(document.tables[0].rows)):
 	table_text += '\n'
 
 print(table_text)
+
+
+import pypdf
+from PyPDF2 import PdfReader
+
+pdf = PdfReader('Poyasnitelnaya_zapiska_Koval_021-1_2.pdf')
+a = pdf.pages
+
+print(a[0].extract_text())
